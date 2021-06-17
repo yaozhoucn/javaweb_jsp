@@ -16,6 +16,15 @@
             <servlet-name>show</servlet-name>
             <url-pattern>/servlet/show</url-pattern>
         </servlet-mapping>
+
+    <servlet>
+        <servlet-name>show2</servlet-name>
+        <servlet-class>com.yaozhou.servlet.ShowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>show2</servlet-name>
+        <url-pattern>/show</url-pattern>
+    </servlet-mapping>
     <!--注册过滤器-->
         <filter>
             <filter-name>CharacterEncodingFilter</filter-name>
