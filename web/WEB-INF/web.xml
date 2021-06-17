@@ -34,4 +34,9 @@
             <filter-name>CharacterEncodingFilter</filter-name>
             <url-pattern>/servlet/*</url-pattern>
         </filter-mapping>
+    
+    <!--注册监听器-->
+    <listener>
+        <listener-class>com.yaozhou.listener.OnlineCountListener</listener-class>
+    </listener>
 </web-app>

@@ -1,5 +1,6 @@
 package com.yaozhou.listener;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
@@ -15,6 +16,20 @@ public class OnlineCountListener implements HttpSessionListener {
      * 一旦创建session就会触发一次这个事件
      */
     public void sessionCreated(HttpSessionEvent se) {
+        //利用session获取在线人数
+        ServletContext servletContext = se.getSession().getServletContext();
+        System.out.println(se.getSession().getId());
+        //手动销毁sssion
+        //se.getSession().invalidate();
+        //配置session失效时间
+        Integer Onlinecount = (Integer) servletContext.getAttribute("OnlineCount");
+        if (Onlinecount == null){
+            Onlinecount = new Integer(1);
+        }else {
+            int count = Onlinecount.intValue();
+            Onlinecount = new Integer(count + 1);
+        }
+        servletContext.setAttribute("OnlineCount",Onlinecount);
 
     }
 
@@ -25,6 +40,18 @@ public class OnlineCountListener implements HttpSessionListener {
      */
 
     public void sessionDestroyed(HttpSessionEvent se) {
-
+        ServletContext servletContext = se.getSession().getServletContext();
+        System.out.println(se.getSession().getId());
+        //手动销毁sssion
+        //se.getSession().invalidate();
+        //配置session失效时间
+        Integer Onlinecount = (Integer) servletContext.getAttribute("OnlineCount");
+        if (Onlinecount == null){
+            Onlinecount = new Integer(1);
+        }else {
+            int count = Onlinecount.intValue();
+            Onlinecount = new Integer(count - 1);
+        }
+        servletContext.setAttribute("OnlineCount",Onlinecount);
     }
 }

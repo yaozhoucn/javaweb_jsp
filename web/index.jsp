@@ -30,5 +30,6 @@
 
 
   %>
+  当前在线有<%=application.getAttribute("OnlineCount")%>人在线
   </body>
 </html>
