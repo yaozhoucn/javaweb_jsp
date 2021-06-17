@@ -39,4 +39,9 @@
     <listener>
         <listener-class>com.yaozhou.listener.OnlineCountListener</listener-class>
     </listener>
+
+    <!--设置session的失效时间-->
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
 </web-app>
