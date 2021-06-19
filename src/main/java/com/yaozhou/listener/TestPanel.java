@@ -27,7 +27,7 @@ public class TestPanel{
         //设置窗体可见性
         frame.setVisible(true);
 
-        //监听关闭时间
+        //监听关闭事件
         frame.addWindowListener(new WindowListener() {
             public void windowOpened(WindowEvent e) {
                 System.out.println("打开窗口");
