@@ -20,7 +20,8 @@ public class SysFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
         if (request.getSession().getAttribute(Constant.USER_SESSION) == null){
-            response.sendRedirect("../error.jsp");
+            System.out.println("sysFilter中的:"+request.getSession().getAttribute(Constant.USER_SESSION));
+            response.sendRedirect("/error/error.jsp");
         }
         chain.doFilter(req,resp);
     }

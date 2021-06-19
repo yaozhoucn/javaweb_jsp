@@ -5,5 +5,5 @@ package com.yaozhou.util;
  * @author HANG
  */
 public class Constant {
-    public final static String USER_SESSION = "USER_SESSION";
+    final public static String USER_SESSION = "USER_SESSION";
 }
