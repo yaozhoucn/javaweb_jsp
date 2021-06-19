@@ -7,6 +7,24 @@
             <error-code>404</error-code>
             <location>/error/404.jsp</location>
         </error-page>
+        
+        <servlet>
+            <servlet-name>loginoutservlet</servlet-name>
+            <servlet-class>com.yaozhou.servlet.LoginServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>loginoutservlet</servlet-name>
+            <url-pattern>/system/success</url-pattern>
+        </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginservlet</servlet-name>
+        <servlet-class>com.yaozhou.servlet.LoginOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginservlet</servlet-name>
+        <url-pattern>/loginout</url-pattern>
+    </servlet-mapping>
 
         <servlet>
             <servlet-name>show</servlet-name>
@@ -34,6 +52,16 @@
             <filter-name>CharacterEncodingFilter</filter-name>
             <url-pattern>/servlet/*</url-pattern>
         </filter-mapping>
+
+    <!--注册过滤器-->
+<!--    <filter>
+        <filter-name>SysFilter</filter-name>
+        <filter-class>com.yaozhou.filter.SysFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SysFilter</filter-name>
+        <url-pattern>/system/*</url-pattern>
+    </filter-mapping>-->
     
     <!--注册监听器-->
     <listener>
